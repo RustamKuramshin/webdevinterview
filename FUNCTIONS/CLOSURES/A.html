@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rosprom JS interview. Functions - Closures</title>
+    <script>
+
+        function counterFunc() {
+
+            //Change the counterFunc function so that it counts pressing of buttons B1 and B2
+
+            let counter = 0;
+
+            return function() {
+
+                counter += 1;
+                console.log("Click count: " + counter);
+            }
+        }
+
+        window.onload = function () {
+            document.getElementById("b1").onclick = counterFunc();
+            document.getElementById("b2").onclick = counterFunc();
+        }
+    </script>
+</head>
+<body>
+<button id="b1" type="button">B1</button>
+<button id="b2" type="button">B2</button>
+</body>
+</html>

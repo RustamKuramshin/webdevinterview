@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rosprom JS interview. OOP - Q1</title>
+    <script>
+
+        function Pet(kind, name, age){
+            this.petKind = kind;
+            this.petName = name;
+            this.petAge = age;
+        }
+
+        Pet.prototype.whoIsOlder = function (otherPet){
+            if (this.petAge > otherPet.petAge){
+                return this.petName;
+            } else {
+                return otherPet.petName;
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+<p id="story"></p>
+
+<script>
+    let petOne = new Pet("dog", "Charlie", 3.5);
+    let petTwo = new Pet("cat", "Cooper", 5);
+
+    window.onload = function () {
+
+        let storyStr = "I love pets. ";
+        storyStr += "I have 2 pets, whose name is " + petOne.petName + " and " + petTwo.petName + ". ";
+        storyStr += petOne.petName + " is a " + petOne.petKind + ", and " + petTwo.petName + " is a " + petTwo.petKind + ". ";
+        storyStr += "The oldest of them is " + petOne.whoIsOlder(petTwo) + ".";
+        document.getElementById("story").innerHTML = storyStr;
+    }
+</script>
+
+</body>
+</html>

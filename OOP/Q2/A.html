@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rosprom JS interview. OOP - Q2</title>
+    <script>
+        String.prototype.backwards = function(){
+            let out = '';
+            for(let i = this.length-1; i >= 0; i--){
+                out += this.substr(i, 1);
+            }
+            return out;
+        }
+    </script>
+</head>
+<body>
+
+<script>
+    let text = "This text should be displayed backwards.";
+    console.log(text.backwards());
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rosprom JS interview. OOP - Q3/title>
+    <script>
+
+        function Animal() {
+            this.say = function (animalPhrase) {
+                return animalPhrase;
+            };
+        }
+
+        function Pet(kind, name) {
+            this.petKind = kind;
+            this.petName = name;
+        }
+
+        Pet.prototype = new Animal();
+
+    </script>
+</head>
+<body>
+
+<script>
+
+    let puppy = new Pet("dog", "Charlie");
+    console.log("A puppy named " + puppy.petName + " said " + puppy.say("woof"));
+
+</script>
+
+</body>
+</html>
